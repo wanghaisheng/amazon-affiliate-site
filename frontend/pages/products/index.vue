@@ -1,7 +1,11 @@
 <template>
     <main class="container mx-auto px-6">
         <div class="mt-8">
-            <h3 class="text-gray-800 text-2xl font-medium">{{ category || "All Products" }}</h3>
+            <!-- <ProductsHero image="https://source.unsplash.com/random/?deals" :title="category || 'All Products'" /> -->
+            <ProductsHero
+                :image="category ? ('https://source.unsplash.com/random/?' + category + '&w=800&q=70') : 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80'"
+                :title="category || 'All Products'" />
+            <!-- <h3 class="text-gray-800 text-2xl font-medium">{{ category || "All Products" }}</h3> -->
             <div
                 class="grid gap-x-6 gap-y-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 mt-6 place-items-center">
                 <Card v-for="product in featuredProducts" :image="product.image" :name="product.name"
@@ -13,6 +17,7 @@
 </template>
 
 <script setup>
+
 const category = useRoute().query.category;
 
 const featuredProductsData = ref([

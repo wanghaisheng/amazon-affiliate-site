@@ -1,6 +1,6 @@
 <template>
-    <NuxtLink :to="props.link" class="card max-w-[100%] sm:w-72 md:w-80 xl:w-[360px] w-96 bg-base-100 shadow-xl h-[100%]">
-        <div class="w-[full] h-[220px] bg-contain bg-center bg-no-repeat rounded-t-xl border border-base-200" :style="`background-image: url('` + props.image + `')`" :alt="props.name"></div>
+    <NuxtLink :to="props.link" class="card max-w-[100%] sm:w-72 md:w-80 xl:w-[360px] w-96 bg-base-100 shadow-xl h-[100%] pt-2 border border-transparent hover:border-base-200">
+        <div class="w-[full] h-[220px] bg-contain bg-center bg-no-repeat rounded-t-xl border-b border-base-200" :style="`background-image: url('` + props.image + `')`" :alt="props.name"></div>
         <div class="card-body">
             <div class="flex gap-1">
                 <div v-if="props.isNew" class="badge badge-secondary">NEW</div>
