@@ -137,7 +137,7 @@
                         <pre><code class="code-highlight language-jsx"><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">TOCInline</span></span> <span class="token attr-name">toc</span><span class="token language-javascript script"><span class="token punctuation script-punctuation">=</span><span class="token punctuation">{</span>props<span class="token punctuation">.</span><span class="token property-access">toc</span><span class="token punctuation">}</span></span> <span class="token attr-name">asDisclosure</span> <span class="token punctuation">/&gt;</span></span>
 </span></code></pre>
                     </div>
-                    <details open="">
+                    <details>
                         <summary class="ml-6 pt-2 pb-2 text-xl font-bold">Table of Contents</summary>
                         <div class="ml-6">
                             <ul>
@@ -270,68 +270,15 @@
                         provider and settings as specified in the config file.</p>
                     <div class="relative">
                         <pre><code class="code-highlight language-js"><span class="code-line">comment<span class="token operator">:</span> <span class="token punctuation">{</span>
-</span><span class="code-line">    <span class="token comment">// Select a provider and use the environment variables associated to it</span>
-</span><span class="code-line">    <span class="token comment">// https://vercel.com/docs/environment-variables</span>
-</span><span class="code-line">    provider<span class="token operator">:</span> <span class="token string">'giscus'</span><span class="token punctuation">,</span> <span class="token comment">// supported providers: giscus, utterances, disqus</span>
-</span><span class="code-line">    giscusConfig<span class="token operator">:</span> <span class="token punctuation">{</span>
-</span><span class="code-line">      <span class="token comment">// Visit the link below, and follow the steps in the 'configuration' section</span>
-</span><span class="code-line">      <span class="token comment">// https://giscus.app/</span>
-</span><span class="code-line">      repo<span class="token operator">:</span> process<span class="token punctuation">.</span><span class="token property-access">env</span><span class="token punctuation">.</span><span class="token constant">NEXT_PUBLIC_GISCUS_REPO</span><span class="token punctuation">,</span>
-</span><span class="code-line">      repositoryId<span class="token operator">:</span> process<span class="token punctuation">.</span><span class="token property-access">env</span><span class="token punctuation">.</span><span class="token constant">NEXT_PUBLIC_GISCUS_REPOSITORY_ID</span><span class="token punctuation">,</span>
-</span><span class="code-line">      category<span class="token operator">:</span> process<span class="token punctuation">.</span><span class="token property-access">env</span><span class="token punctuation">.</span><span class="token constant">NEXT_PUBLIC_GISCUS_CATEGORY</span><span class="token punctuation">,</span>
-</span><span class="code-line">      categoryId<span class="token operator">:</span> process<span class="token punctuation">.</span><span class="token property-access">env</span><span class="token punctuation">.</span><span class="token constant">NEXT_PUBLIC_GISCUS_CATEGORY_ID</span><span class="token punctuation">,</span>
-</span><span class="code-line">      mapping<span class="token operator">:</span> <span class="token string">'pathname'</span><span class="token punctuation">,</span> <span class="token comment">// supported options: pathname, url, title</span>
-</span><span class="code-line">      reactions<span class="token operator">:</span> <span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token comment">// Emoji reactions: 1 = enable / 0 = disable</span>
-</span><span class="code-line">      <span class="token comment">// Send discussion metadata periodically to the parent window: 1 = enable / 0 = disable</span>
-</span><span class="code-line">      metadata<span class="token operator">:</span> <span class="token string">'0'</span><span class="token punctuation">,</span>
-</span><span class="code-line">      <span class="token comment">// theme example: light, dark, dark_dimmed, dark_high_contrast</span>
-</span><span class="code-line">      <span class="token comment">// transparent_dark, preferred_color_scheme, custom</span>
-</span><span class="code-line">      theme<span class="token operator">:</span> <span class="token string">'light'</span><span class="token punctuation">,</span>
-</span><span class="code-line">      <span class="token comment">// theme when dark mode</span>
-</span><span class="code-line">      darkTheme<span class="token operator">:</span> <span class="token string">'transparent_dark'</span><span class="token punctuation">,</span>
-</span><span class="code-line">      <span class="token comment">// If the theme option above is set to 'custom`</span>
-</span><span class="code-line">      <span class="token comment">// please provide a link below to your custom theme css file.</span>
-</span><span class="code-line">      <span class="token comment">// example: https://giscus.app/themes/custom_example.css</span>
-</span><span class="code-line">      themeURL<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
-</span><span class="code-line">    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-</span><span class="code-line">    utterancesConfig<span class="token operator">:</span> <span class="token punctuation">{</span>
-</span><span class="code-line">      <span class="token comment">// Visit the link below, and follow the steps in the 'configuration' section</span>
-</span><span class="code-line">      <span class="token comment">// https://utteranc.es/</span>
-</span><span class="code-line">      repo<span class="token operator">:</span> process<span class="token punctuation">.</span><span class="token property-access">env</span><span class="token punctuation">.</span><span class="token constant">NEXT_PUBLIC_UTTERANCES_REPO</span><span class="token punctuation">,</span>
-</span><span class="code-line">      issueTerm<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token comment">// supported options: pathname, url, title</span>
-</span><span class="code-line">      label<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token comment">// label (optional): Comment 💬</span>
-</span><span class="code-line">      <span class="token comment">// theme example: github-light, github-dark, preferred-color-scheme</span>
-</span><span class="code-line">      <span class="token comment">// github-dark-orange, icy-dark, dark-blue, photon-dark, boxy-light</span>
-</span><span class="code-line">      theme<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
-</span><span class="code-line">      <span class="token comment">// theme when dark mode</span>
-</span><span class="code-line">      darkTheme<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
-</span><span class="code-line">    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-</span><span class="code-line">    disqus<span class="token operator">:</span> <span class="token punctuation">{</span>
-</span><span class="code-line">      <span class="token comment">// https://help.disqus.com/en/articles/1717111-what-s-a-shortname</span>
-</span><span class="code-line">      shortname<span class="token operator">:</span> process<span class="token punctuation">.</span><span class="token property-access">env</span><span class="token punctuation">.</span><span class="token constant">NEXT_PUBLIC_DISQUS_SHORTNAME</span><span class="token punctuation">,</span>
-</span><span class="code-line">    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-</span><span class="code-line">  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-</span></code></pre>
+            </span><span class="code-line">    <span class="token comment">// Select a provider and use the environment variables associated to it</span>
+            punctuation">}</span><span class="token punctuation">,</span>
+            </code></pre>
                     </div>
-                    <h2 id="multiple-authors"><a href="#multiple-authors" aria-hidden="true" tabindex="-1"><span
-                                class="icon icon-link"></span></a>Multiple authors</h2>
-                    <p>Information on authors is now split from <code>siteMetadata.js</code> and stored in its own
-                        <code>data/authors</code> folder as a markdown file. Minimally, you will need to have a
-                        <code>default.md</code> file with authorship information. You can create additional files as
-                        required and the file name will be used as the reference to the author.
-                    </p>
-                    <p>Here's how an author markdown file might look like:</p>
+
                     <div class="remark-code-title">default.md</div>
                     <div class="relative">
                         <pre><code class="code-highlight language-md"><span class="code-line"><span class="token front-matter-block"><span class="token punctuation">---</span>
-</span></span><span class="code-line"><span class="token front-matter-block"><span class="token language-yaml font-matter yaml"><span class="token atrule key">name</span><span class="token punctuation">:</span> Tails Azimuth
-</span></span></span><span class="code-line"><span class="token front-matter-block"><span class="token language-yaml font-matter yaml"><span class="token atrule key">avatar</span><span class="token punctuation">:</span> /static/images/avatar.png
-</span></span></span><span class="code-line"><span class="token front-matter-block"><span class="token language-yaml font-matter yaml"><span class="token atrule key">occupation</span><span class="token punctuation">:</span> Professor of Atmospheric Science
-</span></span></span><span class="code-line"><span class="token front-matter-block"><span class="token language-yaml font-matter yaml"><span class="token atrule key">company</span><span class="token punctuation">:</span> Stanford University
-</span></span></span><span class="code-line"><span class="token front-matter-block"><span class="token language-yaml font-matter yaml"><span class="token atrule key">email</span><span class="token punctuation">:</span> address@yoursite.com
-</span></span></span><span class="code-line"><span class="token front-matter-block"><span class="token language-yaml font-matter yaml"><span class="token atrule key">twitter</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//twitter.com/Twitter
-</span></span></span><span class="code-line"><span class="token front-matter-block"><span class="token language-yaml font-matter yaml"><span class="token atrule key">linkedin</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//www.linkedin.com
-</span></span></span><span class="code-line"><span class="token front-matter-block"><span class="token language-yaml font-matter yaml"><span class="token atrule key">github</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com</span>
+
 </span></span><span class="code-line"><span class="token front-matter-block"><span class="token punctuation">---</span></span>
 </span><span class="code-line">
 </span><span class="code-line">A long description of yourself...
@@ -444,154 +391,21 @@
                         <pre><code class="code-highlight language-jsx"><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">BlogNewsletterForm</span></span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Like what you are reading?<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
 </span></code></pre>
                     </div>
-                    <div class="flex items-center justify-center">
-                        <div class="bg-gray-100 p-6 dark:bg-gray-800 sm:px-14 sm:py-8">
-                            <div>
-                                <div class="pb-1 text-lg font-semibold text-gray-800 dark:text-gray-100">Like what you are
-                                    reading?</div>
-                                <form class="flex flex-col sm:flex-row">
-                                    <div><label class="sr-only" for="email-input">Email address</label><input
-                                            autocomplete="email"
-                                            class="w-72 rounded-md px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
-                                            id="email-input" name="email" placeholder="Enter your email" required=""
-                                            type="email" data-listener-added_38dd9ae1="true"></div>
-                                    <div class="mt-2 flex w-full rounded-md shadow-sm sm:mt-0 sm:ml-3"><button
-                                            class="w-full rounded-md bg-primary-500 py-2 px-4 font-medium text-white sm:py-0 hover:bg-primary-700 dark:hover:bg-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 dark:ring-offset-black"
-                                            type="submit">Sign up</button></div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <p>The component relies on nextjs's <a target="_blank" rel="noopener noreferrer"
-                            href="https://nextjs.org/docs/api-routes/introduction">API routes</a> which requires a
-                        server-side instance of nextjs to be setup and is not compatible with a 100% static site export.
-                        Users should either self-host or use a compatible platform like Vercel or Netlify which supports
-                        this functionality.</p>
-                    <p>A static site compatible alternative is to substitute the route in the newsletter component with a
-                        form API endpoint provider.</p>
-                    <h2 id="bibliography-and-citations-v121"><a href="#bibliography-and-citations-v121" aria-hidden="true"
-                            tabindex="-1"><span class="icon icon-link"></span></a>Bibliography and Citations (v1.2.1)</h2>
-                    <p><code>rehype-citation</code> plugin is added to the xdm processing pipeline in v1.2.1. This allows
-                        you to easily format citations and insert bibliography from an existing bibtex or CSL-json file.</p>
-                    <p>For example, the following markdown code sample:</p>
-                    <div class="relative">
-                        <pre><code class="code-highlight language-md"><span class="code-line">Standard citation [@Nash1950]
-</span><span class="code-line">In-text citations e.g. @Nash1951
-</span><span class="code-line">Multiple citations [see @Nash1950; @Nash1951, page 50]
-</span><span class="code-line">
-</span><span class="code-line"><span class="token bold"><span class="token punctuation">**</span><span class="token content">References:</span><span class="token punctuation">**</span></span>
-</span><span class="code-line">
-</span><span class="code-line">[^ref]
-</span></code></pre>
-                    </div>
-                    <p>is rendered to the following:</p>
-                    <p>Standard citation <span id="citation--nash1950--1">(Nash, 1950)</span><br>In-text citations e.g.
-                        <span id="citation--nash1951--2">Nash (1951)</span><br>Multiple citations <span
-                            id="citation--nash1950--nash1951--3">(see Nash, 1950, 1951, p. 50)</span>
-                    </p>
-                    <p><strong>References:</strong></p>
-                    <div class="csl-bib-body references" id="refs">
-                        <div class="csl-entry" id="bib-nash1950">Nash, J. (1950). Equilibrium points in n-person games.
-                            <i>Proceedings of the National Academy of Sciences</i>, <i>36</i>(1), 48–49.
-                        </div>
-                        <div class="csl-entry" id="bib-nash1951">Nash, J. (1951). Non-cooperative games. <i>Annals of
-                                Mathematics</i>, 286–295.</div>
-                    </div>
-                    <p>A bibliography will be inserted at the end of the document, but this can be overwritten by specifying
-                        a <code>[^Ref]</code> tag at the intended location. The plugin uses APA citation formation, but also
-                        supports the following CSLs, 'apa', 'vancouver', 'harvard1', 'chicago', 'mla', or a path to a
-                        user-specified CSL file.</p>
-                    <p>See <a target="_blank" rel="noopener noreferrer"
-                            href="https://github.com/timlrx/rehype-citation">rehype-citation readme</a> for more information
-                        on the configuration options.</p>
-                    <h2 id="self-hosted-font-v150"><a href="#self-hosted-font-v150" aria-hidden="true" tabindex="-1"><span
-                                class="icon icon-link"></span></a>Self-hosted font (v1.5.0)</h2>
-                    <p>Google font has been replaced with self-hosted font from <a target="_blank" rel="noopener noreferrer"
-                            href="https://fontsource.org/">Fontsource</a>. This gives the following <a target="_blank"
-                            rel="noopener noreferrer" href="https://fontsource.org/docs/introduction">advantages</a>:</p>
-                    <blockquote>
-                        <p>Self-hosting brings significant performance gains as loading fonts from hosted services, such as
-                            Google Fonts, lead to an extra (render blocking) network request. To provide perspective, for
-                            simple websites it has been seen to double visual load times.</p>
-                        <p>Fonts remain version locked. Google often pushes updates to their fonts without notice, which may
-                            interfere with your live production projects. Manage your fonts like any other NPM dependency.
-                        </p>
-                        <p>Commit to privacy. Google does track the usage of their fonts and for those who are extremely
-                            privacy concerned, self-hosting is an alternative.</p>
-                    </blockquote>
-                    <p>This leads to a smaller font bundle and a 0.1s faster load time (<a target="_blank"
-                            rel="noopener noreferrer"
-                            href="https://www.webpagetest.org/video/compare.php?tests=220201_AiDcFH_f68a69b758454dd52d8e67493fdef7da,220201_BiDcMC_bf2d53f14483814ba61e794311dfa771">webpagetest
-                            comparison</a>).</p>
-                    <p>To change the default Inter font:</p>
-                    <ol>
-                        <li>Install the preferred <a target="_blank" rel="noopener noreferrer"
-                                href="https://fontsource.org/fonts">font</a> -
-                            <code>npm install -save @fontsource/&lt;font-name&gt;</code>
-                        </li>
-                        <li>Update the import at <code>pages/_app.js</code>-
-                            <code>import '@fontsource/&lt;font-name&gt;.css'</code>
-                        </li>
-                        <li>Update the <code>fontfamily</code> property in the tailwind css config file</li>
-                    </ol>
-                    <h2 id="upgrade-guide"><a href="#upgrade-guide" aria-hidden="true" tabindex="-1"><span
-                                class="icon icon-link"></span></a>Upgrade guide</h2>
-                    <p>There are significant portions of the code that has been changed from v0 to v1 including support for
-                        layouts and a new mdx engine.</p>
-                    <p>There's also no real reason to change if the previous one serves your needs and it might be easier to
-                        copy the component changes you are interested in to your existing blog rather than migrating
-                        everything over.</p>
-                    <p>Nonetheless, if you want to do so and have not changed much of the template, you could clone the new
-                        version and copy over the blog post over to the new template.</p>
-                    <p>Another alternative would be to pull the latest template version with the following code:</p>
-                    <div class="relative">
-                        <pre><code class="code-highlight language-bash"><span class="code-line"><span class="token function">git</span> remote <span class="token function">add</span> template git@github.com:timlrx/tailwind-nextjs-starter-blog.git
-</span><span class="code-line"><span class="token function">git</span> pull template v1 --allow-unrelated-histories
-</span><span class="code-line"><span class="token function">rm</span> -rf node_modules
-</span></code></pre>
-                    </div>
-                    <p>You can see an example of such a migration in this <a target="_blank" rel="noopener noreferrer"
-                            href="https://github.com/timlrx/timlrx.com/commit/bba1c185384fd6d5cdaac15abf802fdcff027286">commit</a>
-                        for my personal blog.</p>
-                    <p>v1 also uses <code>feed.xml</code> rather than <code>index.xml</code>, to avoid some build issues
-                        with Vercel. If you are migrating you should add a redirect to <code>next.config.js</code> like so:
-                    </p>
-                    <div class="relative">
-                        <pre><code class="code-highlight language-js"><span class="code-line"><span class="token keyword">async</span> <span class="token function">redirects</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-</span><span class="code-line">  <span class="token keyword control-flow">return</span> <span class="token punctuation">[</span>
-</span><span class="code-line">    <span class="token punctuation">{</span>
-</span><span class="code-line">      source<span class="token operator">:</span> <span class="token string">'/:path/index.xml'</span><span class="token punctuation">,</span>
-</span><span class="code-line">      destination<span class="token operator">:</span> <span class="token string">'/:path/feed.xml'</span><span class="token punctuation">,</span>
-</span><span class="code-line">      permanent<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-</span><span class="code-line">    <span class="token punctuation">}</span>
-</span><span class="code-line">  <span class="token punctuation">]</span>
-</span><span class="code-line"><span class="token punctuation">}</span>
-</span></code></pre>
-                    </div>
-                    <section class="footnotes" data-footnotes="true">
-                        <h2 id="footnote-label" class="sr-only"><a href="#footnote-label" aria-hidden="true"
-                                tabindex="-1"><span class="icon icon-link"></span></a>Footnotes</h2>
-                        <ol>
-                            <li id="user-content-fn-1">
-                                <p>With the new changes in Nextjs 12, first load JS increase to 45kB. <a
-                                        href="#user-content-fnref-1" aria-label="Back to content"
-                                        class="data-footnote-backref" data-footnote-backref="true">↩</a></p>
-                            </li>
-                        </ol>
-                    </section>
+
                 </div>
             </div>
             <div id="comment">
                 <div class="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300"><button>Load Comments</button>
-                <div class="giscus" id="comments-container"></div>
+                    <div class="giscus" id="comments-container"></div>
+                </div>
             </div>
+            <footer>
+                <div class="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">
+                    <div class="pt-4 xl:pt-8"><a class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                            href="/blog/nested-route/introducing-multi-part-posts-with-nested-routing">← Introducing
+                            Multi-part Posts with Nested Routing</a></div>
+                </div>
+            </footer>
         </div>
-        <footer>
-            <div class="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">
-                <div class="pt-4 xl:pt-8"><a class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                        href="/blog/nested-route/introducing-multi-part-posts-with-nested-routing">← Introducing
-                        Multi-part Posts with Nested Routing</a></div>
-            </div>
-        </footer>
-    </div>
-</main></template>
+    </main>
+</template>
