@@ -14,5 +14,8 @@
     "@types/node": "^18",
     "daisyui": "^3.1.7",
     "nuxt": "^3.6.1"
+  },
+  "dependencies": {
+    "axios": "^1.4.0"
   }
 }

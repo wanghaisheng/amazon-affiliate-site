@@ -1,0 +1,64 @@
+{
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
+    "paths": {
+      "#imports": [
+        "/home/shaheer/Desktop/amazon-commerce/.nuxt/types/nitro-imports"
+      ],
+      "#paths": [
+        "/home/shaheer/Desktop/amazon-commerce/node_modules/nuxt/dist/core/runtime/nitro/paths"
+      ],
+      "~": [
+        "/home/shaheer/Desktop/amazon-commerce"
+      ],
+      "~/*": [
+        "/home/shaheer/Desktop/amazon-commerce/*"
+      ],
+      "@": [
+        "/home/shaheer/Desktop/amazon-commerce"
+      ],
+      "@/*": [
+        "/home/shaheer/Desktop/amazon-commerce/*"
+      ],
+      "~~": [
+        "/home/shaheer/Desktop/amazon-commerce"
+      ],
+      "~~/*": [
+        "/home/shaheer/Desktop/amazon-commerce/*"
+      ],
+      "@@": [
+        "/home/shaheer/Desktop/amazon-commerce"
+      ],
+      "@@/*": [
+        "/home/shaheer/Desktop/amazon-commerce/*"
+      ],
+      "assets": [
+        "/home/shaheer/Desktop/amazon-commerce/assets"
+      ],
+      "assets/*": [
+        "/home/shaheer/Desktop/amazon-commerce/assets/*"
+      ],
+      "public": [
+        "/home/shaheer/Desktop/amazon-commerce/public"
+      ],
+      "public/*": [
+        "/home/shaheer/Desktop/amazon-commerce/public/*"
+      ]
+    }
+  },
+  "include": [
+    "/home/shaheer/Desktop/amazon-commerce/.nuxt/types/nitro-nuxt.d.ts",
+    "./types/nitro.d.ts",
+    "../**/*",
+    "../server/**/*"
+  ]
+}

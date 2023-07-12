@@ -1,5 +1,5 @@
 <template>
-    <CategoryCard :image="image" :title="title" :text="text" componentType="hero" :linkText="linkText" :link="link" />
+    <HeroCard :image="image" :title="title" :text="text" componentType="hero" :linkText="linkText" :link="link" />
 </template>
 
 <script setup>
