@@ -1,16 +1,16 @@
 # Nuxt dev/build outputs
-frontend/.output
-frontend/.nuxt
-frontend/.nitro
-frontend/.cache
-frontend/dist
+.output
+.nuxt
+.nitro
+.cache
+dist
 
 # Node dependencies
-frontend/node_modules
+node_modules
 
 # Logs
-frontend/logs
-frontend/*.log
+logs
+*.log
 
 # Misc
 .DS_Store
