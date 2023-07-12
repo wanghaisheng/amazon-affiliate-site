@@ -6,7 +6,7 @@
         </Head>
         <div class="mt-8">
             <ProductsHero
-                :image="imageUrl"
+                :image="imageUrl || 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80'"
                 :title="category || 'All Products'" />
             <!-- <h3 class="text-gray-800 text-2xl font-medium">{{ category || "All Products" }}</h3> -->
             <div

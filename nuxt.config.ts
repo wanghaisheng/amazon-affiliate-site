@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     }
   },
   routeRules: {
-    '/**': { isr: 600 }
+    '/**': { swr: true }
   },
   devtools: { enabled: true, },
   modules: [
